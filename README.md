@@ -27,6 +27,6 @@ This project contains a complete authentication system using Node.js, Express, a
 <img width="1914" height="1022" alt="image" src="https://github.com/user-attachments/assets/e6889ab5-5ce8-4740-86b2-969a1aecc1cd" />
 <img width="1907" height="1031" alt="image" src="https://github.com/user-attachments/assets/5f3824d8-ddaf-4d20-a657-85ba794f00d7" />
 <img width="1914" height="1021" alt="image" src="https://github.com/user-attachments/assets/950f1e37-e412-4a57-bfff-6d820e372283" />
-![Uploading image.png…]()
+<img width="1915" height="1023" alt="image" src="https://github.com/user-attachments/assets/f2d359dc-b8f6-40c6-a307-8fdab8c81718" />
 - **reCAPTCHA Integration**: Protects against bot traffic on sign up and login pages.
 <img width="1915" height="1034" alt="image" src="https://github.com/user-attachments/assets/ca1f7a31-f328-45ac-9b50-8f57db16b2e8" />
