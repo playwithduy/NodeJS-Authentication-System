@@ -1,0 +1,102 @@
+<section>
+    <h1>Sign Up</h1>
+    <% if (message) { %>
+        <p style="color:red;"><%= message %></p>
+    <% } %>
+    <form action="/user/signup" method="post" onsubmit="return validatePassword()">
+        <input type="text" name="username" placeholder="Username" autocomplete="off" required><br><br>
+        <input type="email" name="email" placeholder="Email" autocomplete="off" required><br><br>
+        <input type="password" id="password" name="password" placeholder="Password" autocomplete="off" required><br><br>
+        
+        <!-- Thanh đo độ mạnh mật khẩu -->
+        <div id="passwordStrength" style="width: 300px; height: 8px; background: #ddd; margin-bottom: 10px;">
+            <div id="strengthBar" style="height: 100%; width: 0%; background: red;"></div>
+        </div>
+        <small id="strengthText"></small><br><br>
+
+        <input type="password" id="confirmPassword" name="cpassword" placeholder="Confirm Password" autocomplete="off" required><br><br>
+
+        <!-- reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="<%= process.env.RECAPTCHA_SITE_KEY %>"></div>
+        <br>
+
+        <button type="submit" class="btn btn-light"><strong>Sign Up</strong></button>
+    </form>
+    <br>
+
+    <!-- Sign-up Google Auth -->
+    <a href="/auth/google"><strong>Sign In with Google</strong></a>
+
+    <p><strong>Already have an account?</strong> 
+        <a href="/user/signin"><strong>Sign in</strong></a>
+    </p>
+</section>
+
+<!-- reCAPTCHA script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+const passwordInput = document.getElementById("password");
+const strengthBar = document.getElementById("strengthBar");
+const strengthText = document.getElementById("strengthText");
+
+passwordInput.addEventListener("input", () => {
+  const val = passwordInput.value;
+  let strength = 0;
+
+  if (val.length >= 8) strength++;
+  if (/[A-Z]/.test(val)) strength++;
+  if (/[a-z]/.test(val)) strength++;
+  if (/[0-9]/.test(val)) strength++;
+  if (/[@$!%*?&]/.test(val)) strength++;
+
+  switch (strength) {
+    case 0:
+    case 1:
+      strengthBar.style.width = "20%";
+      strengthBar.style.background = "red";
+      strengthText.innerText = "Rất yếu";
+      break;
+    case 2:
+      strengthBar.style.width = "40%";
+      strengthBar.style.background = "orange";
+      strengthText.innerText = "Yếu";
+      break;
+    case 3:
+      strengthBar.style.width = "60%";
+      strengthBar.style.background = "yellow";
+      strengthText.innerText = "Trung bình";
+      break;
+    case 4:
+      strengthBar.style.width = "80%";
+      strengthBar.style.background = "blue";
+      strengthText.innerText = "Khá mạnh";
+      break;
+    case 5:
+      strengthBar.style.width = "100%";
+      strengthBar.style.background = "green";
+      strengthText.innerText = "Mạnh";
+      break;
+  }
+});
+
+// Kiểm tra trước khi submit
+function validatePassword() {
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  const strongPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  if (!strongPassword.test(password)) {
+    alert("Mật khẩu chưa đủ mạnh! Hãy dùng ít nhất 8 ký tự, gồm chữ hoa, chữ thường, số và ký tự đặc biệt.");
+    return false;
+  }
+
+  if (password !== confirmPassword) {
+    alert("Mật khẩu xác nhận không khớp!");
+    return false;
+  }
+
+  return true;
+}
+</script>
