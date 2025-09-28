@@ -2,107 +2,31 @@
 
 This project contains a complete authentication system using Node.js, Express, and MongoDB. It includes features like sign up, sign in, sign out, password reset, and social authentication (Google). The project is structured to be scalable with separate components for models, controllers, and routes.
 
-## Live Site
-[Click here](https://nodejs-authentication-system-l2pu.onrender.com/user/signin) to visit the live site.
-
 ## Features Implemented
+<img width="1918" height="1027" alt="image" src="https://github.com/user-attachments/assets/3ffac41c-a56c-4723-bd3e-d48eb3a08bf1" />
 - **Sign-up with Email**: Create an account using your email and password.
+<img width="1912" height="1027" alt="image" src="https://github.com/user-attachments/assets/964f0bca-5054-4908-8192-91284fa7f531" />
 - **Sign-in**: Log into your account securely.
+<img width="1913" height="1028" alt="image" src="https://github.com/user-attachments/assets/7446d813-0bef-4c15-b0e6-296fe40d9dd5" />
+<img width="1917" height="1025" alt="image" src="https://github.com/user-attachments/assets/23d7a051-a847-4990-91cf-62e07c656334" />
+<img width="1917" height="1029" alt="image" src="https://github.com/user-attachments/assets/49f7d0ce-1bd7-4c8f-b7d1-13c91b7dc237" />
 - **Sign Out**: Log out of your session.
+<img width="1918" height="1026" alt="image" src="https://github.com/user-attachments/assets/20f30acc-281e-4fb0-8256-94d11cbb6e48" />
 - **Reset Password**: You can reset your passwords after signing in.
-- **Encrypted Passwords**: Passwords are securely stored using encryption.
+<img width="1915" height="1074" alt="image" src="https://github.com/user-attachments/assets/d9c77db7-e560-4976-be6c-1901ac337d5f" />
+<img width="1915" height="1034" alt="image" src="https://github.com/user-attachments/assets/c849ec6b-32fc-4c26-98e4-4e585bca8100" />
+- **Encrypted Passwords**: Passwords are securely stored using encryption
+<img width="1911" height="1078" alt="image" src="https://github.com/user-attachments/assets/cbb6c782-c50d-43fe-a241-16296d15f42a" />
 - **Google Login/Signup**: Sign in or sign up using your Google account.
+<img width="1919" height="1026" alt="image" src="https://github.com/user-attachments/assets/2450fb08-47ef-4e17-bfdf-0af267811bde" />
+<img width="1919" height="1029" alt="image" src="https://github.com/user-attachments/assets/97f91009-64ab-416b-91e0-493267b27545" />
 - **Forgot Password**: Reset your password via email.
+<img width="1915" height="1026" alt="image" src="https://github.com/user-attachments/assets/7fe3b473-80d9-44f8-96e1-744bff34a567" />
+<img width="1911" height="1027" alt="image" src="https://github.com/user-attachments/assets/833aa1a3-301b-4aa6-9494-ad8ee8288a74" />
 - **Password Strength Validation**: Notifications are displayed for unmatching passwords during sign up and incorrect passwords during sign in.
+<img width="1914" height="1022" alt="image" src="https://github.com/user-attachments/assets/e6889ab5-5ce8-4740-86b2-969a1aecc1cd" />
+<img width="1907" height="1031" alt="image" src="https://github.com/user-attachments/assets/5f3824d8-ddaf-4d20-a657-85ba794f00d7" />
+<img width="1914" height="1021" alt="image" src="https://github.com/user-attachments/assets/950f1e37-e412-4a57-bfff-6d820e372283" />
+![Uploading image.png…]()
 - **reCAPTCHA Integration**: Protects against bot traffic on sign up and login pages.
-
-## Environment Variables
-
-Before running the application locally, ensure you have set up the following environment variables in a .env file located at the root of your project:
-
-1. **PORT**: Specifies the port number the application listens on.
-2. **DB_URL**: MongoDB database connection URL.
-3. **CLIENT_ID**: Google OAuth client ID.
-4. **CLIENT_SECRET**: Google OAuth client secret (sign in with Google).
-5. **EMAIL**: Email address for sending emails.
-6. **PASSWORD**: App-specific password or regular password for the Gmail account.
-7. **RECAPTCHA_SECRET_KEY**: Google reCAPTCHA secret key.
-8. **CLIENT_URL**: URL to redirect after signing in with Google, e.g., "http://localhost:3000/auth/login/success".
-
-Ensure that you have the appropriate values for each variable before running the application.
-
-Example `.env` file:
-
-```plaintext
-PORT=3000
-DB_URL=mongodb://localhost:27017/authdatabase
-CLIENT_ID=your_client_id
-CLIENT_SECRET=your_client_secret
-EMAIL=your_email@gmail.com
-PASSWORD=your_gmail_password
-RECAPTCHA_SECRET_KEY=your_recaptcha_secret_key
-CLIENT_URL=http://localhost:3000/auth/login/success
-```
-
-## Folder
-  ```csharp
-node-authentication/
-├── config/                  # Configuration files
-│   └── mongodb.js           # MongoDB configuration
-│
-├── controllers/             # Controller logic
-├── models/                  # Database models
-├── routes/                  # Route definitions
-├── views/                   # EJS views
-├── app.js                   # Express application setup
-│
-├── public/                  # Static assets
-│
-├── package.json             # NPM package configuration
-├── README.md                # Project README file
-├── .gitignore               # Git ignore configuration
-└── .env                     # Environment variables file
-
-```
-
-## Installation and Setup
-
-Follow these steps to run the project locally:
-
-
-1. Clone the repository to your local machine:
-
-   ```bash
-   git clone https://github.com/your-username/nodejs-authentication-system.git
-  
-2. Navigate into the project directory:
-   ```bash
-   cd node-authentication-system
-    ```
-3. Install dependencies:
-   ```bash
-   npm install
-
-4. Start the server:
-   ```bash
-   npm start
-5. Open your web browser and visit http://localhost:3000 to access the application.
-
-## Dependencies required
-
-- Express.js
-- MongoDB
-- Passport.js
-- bcrypt
-- express-session
-- express-ejs-layouts
-- dotenv
-- nodemailer
-
-## Credits
-
-This project was created by [Ravikant Singh](https://github.com/ravikantsingh12). Contributions via issues or pull requests are welcome!
-
-## Follow me on
-
-- [LinkedIn](https://www.linkedin.com/in/ravikant-singh-327a98241)
+<img width="1915" height="1034" alt="image" src="https://github.com/user-attachments/assets/ca1f7a31-f328-45ac-9b50-8f57db16b2e8" />
